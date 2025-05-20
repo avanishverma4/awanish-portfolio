@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  html {
+    font-family: "Manrope", sans-serif;
+    scroll-behavior: smooth;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    @apply text-gray-800 bg-white;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 md:mb-12 text-gray-800 relative inline-block;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute left-0 -bottom-2 h-1 w-16 bg-indigo-500 rounded-full;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-gray-700 hover:text-indigo-500 transition-colors duration-300 text-base font-medium;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-indigo-500;
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 focus:ring-indigo-500;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 focus:ring-pink-500;
+  }
+
+  .social-link {
+    @apply flex items-center justify-center p-3 rounded-full text-gray-600 hover:text-white transition-all duration-300 hover:scale-110;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Project card hover effects */
+.project-card {
+  @apply relative overflow-hidden rounded-xl shadow-lg transition-all duration-500;
+}
+
+.project-card:hover .project-overlay {
+  @apply opacity-100;
+}
+
+.project-card:hover .project-image {
+  @apply scale-110;
+}
+
+.project-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-indigo-900/90 to-purple-900/70 flex flex-col justify-end p-6 opacity-0 transition-all duration-500;
+}
+
+.project-image {
+  @apply w-full h-full object-cover transition-all duration-500;
+}
+
+/* Form input styles */
+.form-input {
+  @apply w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300;
+}
+
+.input-group {
+  @apply relative mb-6;
+}
+
+.floating-label {
+  @apply absolute left-4 top-4 text-gray-500 transition-all duration-300 pointer-events-none;
+}
+
+.form-input:focus + .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label {
+  @apply text-indigo-500 text-sm -translate-y-8 bg-white px-1;
+}
+
+/* Timeline styling */
+.timeline-item {
+  @apply relative pl-10 pb-10 border-l-2 border-indigo-200 last:border-transparent;
+}
+
+.timeline-dot {
+  @apply absolute left-[-0.5rem] top-0 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white;
+}
+
+.timeline-content {
+  @apply pl-4;
 }
