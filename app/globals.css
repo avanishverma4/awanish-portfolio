@@ -145,7 +145,7 @@
 
 /* Timeline styling */
 .timeline-item {
-  @apply relative pl-10 pb-10 border-l-2 border-indigo-200 last:border-transparent;
+  @apply relative pl-2 md:pl-10 pb-10 border-l-2 border-indigo-200 last:border-transparent;
 }
 
 .timeline-dot {

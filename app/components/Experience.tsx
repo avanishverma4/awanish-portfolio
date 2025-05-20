@@ -80,9 +80,12 @@ const Experience: React.FC = () => {
                         {item.period}
                       </span>
                     </div>
-                    <div className="space-y-2 text-gray-600">
+                    <div className="space-y-2 text-gray-600 max-w-full">
                       {item.description.map((desc, index) => (
-                        <p key={index} className="leading-relaxed">
+                        <p
+                          key={index}
+                          className="leading-relaxed break-words max-w-full overflow-x-auto"
+                        >
                           {desc}
                         </p>
                       ))}
@@ -96,11 +99,10 @@ const Experience: React.FC = () => {
 
         <div className="mt-16 text-center">
           <a
-            href="/Awanish%20Verma%20-%20UI%20UX%20Designer.pdf"
+            href="/resume.pdf"
             className="btn btn-primary inline-flex items-center"
             target="_blank"
             rel="noopener noreferrer"
-            download
           >
             Download CV
             <svg
