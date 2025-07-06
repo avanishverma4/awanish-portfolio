@@ -100,7 +100,7 @@ const Experience: React.FC = () => {
         <div className="mt-16 text-center">
           <a
             href="/resume.pdf"
-            className="btn btn-primary inline-flex items-center"
+            className="btn btn-primary inline-flex items-center cursor-pointer"
             target="_blank"
             rel="noopener noreferrer"
           >

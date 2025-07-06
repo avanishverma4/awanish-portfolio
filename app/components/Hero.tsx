@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
       className="min-h-screen relative flex items-center justify-center overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #FFF3E0 0%, #FFE4E1 50%, #F8BBD0 100%)",
+          "linear-gradient(315deg, #F8BBD0 0%, #FFE4E1 50%, #FFF3E0 100%)",
       }}
     >
       <div
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
         </p>
         <div className="flex justify-center gap-4 animate-fade-up delay-400">
           <button
-            className="btn bg-indigo-500 text-white hover:bg-indigo-600"
+            className="btn bg-indigo-500 text-white hover:bg-indigo-600 cursor-pointer"
             onClick={() =>
               document
                 .getElementById("work")
@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
             View My Work
           </button>
           <button
-            className="btn bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
+            className="btn bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white cursor-pointer"
             onClick={() =>
               document
                 .getElementById("contact")
