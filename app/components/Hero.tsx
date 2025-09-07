@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
         </h2>
         <p className="max-w-2xl mx-auto text-base md:text-lg mb-10 animate-fade-up delay-300">
           Creating thoughtful digital experiences that connect people with
-          products and brands.
+          products and brands...
         </p>
         <div className="flex justify-center gap-4 animate-fade-up delay-400">
           <button
